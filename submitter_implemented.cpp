@@ -41,7 +41,7 @@ DigitalOut timestampPin(D7);
 
 // AAML tinyML Lab: ARENA_SIZE is defined in tensorflow/lite/c/common.h
 constexpr int kTensorArenaSize = ARENA_SIZE;
-uint8_t tensor_arena[kTensorArenaSize];
+alignas(16) uint8_t tensor_arena[kTensorArenaSize];
 
 #define QUANT_MODEL false
 #define IO_TYPE float
